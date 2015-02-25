@@ -13,20 +13,14 @@ public class SudokuCardAlonso extends SudokuCard {
 	}
 
 	private void checkConstrains() throws InvalidValueException {
-		checkColumns();
-		checkRows();
+		checkLines();
 		checkBoxes();
 	}
-
-	private void checkColumns() throws InvalidValueException {
-		for (int x = 0; x < SUDOKU_LENGTH; x++) {
-			checkColumn(x);
-		}
-	}
-
-	private void checkRows() throws InvalidValueException {
-		for (int y = 0; y < SUDOKU_LENGTH; y++) {
-			checkRow(y);
+	
+	private void checkLines() throws InvalidValueException {
+		for (int i = 0; i < SUDOKU_LENGTH; i++) {
+			checkColumn(i);
+			checkRow(i);
 		}
 	}
 
